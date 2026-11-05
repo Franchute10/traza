@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f3f5f4" />
+    <title>Sistema de control y conciliación de pagos · DEMO</title>
+    <link rel="stylesheet" href="styles.css?v=mobile-readability-3" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a href="#inicio" class="brand" aria-label="Ir al inicio">
+          <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 21.5 16 29l16-18"/><path d="M8 12h9"/></svg></span>
+          <span class="brand-copy"><strong>TRAZA</strong><small>control de pagos</small></span>
+        </a>
+        <div class="workspace-label">ESPACIO DE TRABAJO</div>
+        <div class="company-switch"><span class="company-monogram">CV</span><span><b>Consultoría Valle</b><small>Operaciones · DEMO</small></span><svg class="chevron" viewBox="0 0 20 20"><path d="m6 8 4 4 4-4"/></svg></div>
+        <nav class="primary-nav" aria-label="Navegación principal">
+          <div class="nav-section-label">FLUJO DE PAGO</div>
+          <a href="#inicio" class="nav-link" data-page="inicio"><svg viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg><span>Resumen</span></a>
+          <a href="#obligaciones" class="nav-link" data-page="obligaciones"><svg viewBox="0 0 24 24"><path d="M7 3.75h7l4 4v12.5H7z"/><path d="M14 3.75v4h4M10 12h5M10 15.5h5"/></svg><span>Facturas por pagar</span><i id="nav-obligations-count">0</i></a>
+          <a href="#asignaciones" class="nav-link" data-page="asignaciones"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M2.8 19c.6-3 2.3-4.5 5.2-4.5s4.6 1.5 5.2 4.5M14 14.8c3.8-.9 6 .6 6.7 3.7"/></svg><span>Solicitudes a intermediarios</span></a>
+          <a href="#portal" class="nav-link" data-page="portal"><svg viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/><circle cx="12" cy="12" r="8.5"/></svg><span>Portal de intermediario</span></a>
+          <div class="nav-section-label nav-section-spaced">COMPROBANTES Y CONFIRMACIÓN</div>
+          <a href="#revision" class="nav-link" data-page="revision"><svg viewBox="0 0 24 24"><path d="M3.5 12s3.1-6 8.5-6 8.5 6 8.5 6-3.1 6-8.5 6-8.5-6-8.5-6Z"/><circle cx="12" cy="12" r="2.5"/></svg><span>Revisión de evidencia</span><i class="nav-count alert-count" id="nav-review-count">0</i></a>
+          <a href="#confirmaciones" class="nav-link" data-page="confirmaciones"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.2 4.2L19.5 6.8"/><circle cx="12" cy="12" r="9"/></svg><span>Confirmación del proveedor</span></a>
+          <a href="#liquidaciones" class="nav-link" data-page="liquidaciones"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="14" rx="2"/><path d="M3.5 10h17M7 15h4"/></svg><span>Estado de cuenta intermediarios</span></a>
+          <a href="#reportes" class="nav-link" data-page="reportes"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Reportes</span></a>
+          <details class="nav-tools"><summary>Herramientas del laboratorio</summary>
+            <a href="#devoluciones" class="nav-link" data-page="devoluciones"><svg viewBox="0 0 24 24"><path d="M9 7H5V3M5 7a8 8 0 1 1-1 7"/><path d="m5 7 4 4"/></svg><span>Devoluciones</span><i class="nav-count alert-count" id="nav-returns-count">0</i></a>
+            <a href="#alertas" class="nav-link" data-page="alertas"><svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-2.5 7-2.5 9h17C20.5 16 18 16 18 9ZM10 21h4"/></svg><span>Alertas y excepciones</span><i class="nav-count alert-count" id="nav-alert-count">0</i></a>
+            <a href="#laboratorio" class="nav-link" data-page="laboratorio"><svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v6l-5.2 8.4A2.4 2.4 0 0 0 6.9 21h10.2a2.4 2.4 0 0 0 2.1-3.6L14 9V3"/><path d="M8 14h8"/></svg><span>28 escenarios</span><b class="new-tag">DEMO</b></a>
+            <a href="#administracion" class="nav-link" data-page="administracion"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.1.9-1.5 2.6-1.4-.5a7.7 7.7 0 0 1-1.5.9l-.3 1.5h-3l-.3-1.5a7.7 7.7 0 0 1-1.5-.9l-1.4.5-1.5-2.6 1.1-.9A7.7 7.7 0 0 1 7 13.3l-1.4-.7v-3l1.4-.3a7.7 7.7 0 0 1 .7-1.7l-.8-1.3 2.1-2.1 1.3.8a7.7 7.7 0 0 1 1.7-.7l.3-1.4h3l.3 1.4a7.7 7.7 0 0 1 1.7.7l1.3-.8 2.1 2.1-.8 1.3a7.7 7.7 0 0 1 .7 1.7l1.4.3v3l-1.4.7a7.7 7.7 0 0 1-.2 1.7Z"/></svg><span>Administración</span></a>
+          </details>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="sidebar-support"><span class="support-icon">i</span><span><b>Entorno demostrativo</b><small>Datos ficticios · sin conexión financiera</small></span></div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button id="mobile-menu" class="icon-button menu-button" aria-label="Abrir menú"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+          <div class="breadcrumb"><span>Consultoría Valle</span><span class="crumb-separator">/</span><b id="breadcrumb-current">Resumen</b><span class="demo-pill">DEMO</span></div>
+          <div class="topbar-actions">
+            <label class="role-switch"><span>Vista</span><select id="role-select" aria-label="Simular rol"><option>Operador de pagos</option><option>Aprobador</option><option>Administrador de la empresa</option><option>Intermediario · Juan Salazar</option><option>Intermediario · Micaela Torres</option><option>Consulta / contabilidad</option></select></label>
+            <button class="icon-button top-search" id="open-search" aria-label="Buscar"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 4.5 4.5"/></svg></button>
+            <button class="icon-button notification-button" data-nav="alertas" aria-label="Ver alertas"><svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-2.5 7-2.5 9h17C20.5 16 18 16 18 9ZM10 21h4"/></svg><span class="notification-dot"></span></button>
+            <span class="avatar avatar-green">CV</span>
+          </div>
+        </header>
+        <div class="mobile-demo-strip">Entorno de demostración — no se ejecutan pagos ni se consultan bancos</div>
+        <div id="app-content" class="page-content" tabindex="-1"></div>
+        <footer class="app-footer"><span>TRAZA · Control de pagos</span><span>Laboratorio local · Datos DEMO · <a href="#laboratorio">Ver reglas del sistema</a></span></footer>
+      </main>
+    </div>
+    <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+    <dialog id="action-dialog" class="action-dialog"><form method="dialog" id="action-form" novalidate><div id="dialog-content"></div></form></dialog>
+    <script src="domain.js" defer></script>
+    <script src="app.js" defer></script>
+  </body>
+</html>
