@@ -2,6 +2,10 @@
 
 Laboratorio local en español para registrar facturas, asignar pagos por tramos a intermediarios, guardar comprobantes, confirmar por separado lo recibido por el proveedor y revisar la cuenta de cada intermediario. Conserva los 28 escenarios del laboratorio.
 
+## Manual visual
+
+La [guía visual paso a paso](https://franchute10.github.io/traza/manual.html) explica el flujo con dibujos, ejemplos y vocabulario pensado para personas que vienen de trabajar en Excel. También está enlazada desde el menú lateral de TRAZA.
+
 ## Iniciar la DEMO
 
 No requiere instalar dependencias ni conectar servicios externos. Desde esta carpeta ejecuta:
@@ -32,7 +36,7 @@ node --test tests/domain.test.cjs
 
 Las devoluciones que revierten una recepción se concilian contra la confirmación, el intento y la moneda exactos, incluso si la misma confirmación se distribuyó entre varios intentos. Los anticipos quedan vinculados a su factura e intento; el estado de cuenta separa lo entregado, aplicado, comprometido y pendiente de regularizar. Un saldo negativo se muestra como importe por recuperar o compensar. Si la moneda bancaria difiere de la factura/asignación, la solicitud exige el importe de destino y el tratamiento de conversión.
 
-La DEMO no conecta bancos, billeteras, correo, mensajería ni pagos reales. Todos los nombres, perfiles, cuentas, referencias y archivos de ejemplo son ficticios y están marcados como DEMO. No uses datos financieros reales ni publiques esta aplicación en un hosting público.
+La DEMO está disponible públicamente en <https://franchute10.github.io/traza/> para que se pueda consultar y compartir. No conecta bancos, billeteras, correo, mensajería ni pagos reales. Todos los nombres, perfiles, cuentas, referencias y archivos de ejemplo son ficticios. No uses datos financieros reales, personales o confidenciales.
 
 ## Escenarios destacados
 

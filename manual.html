@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f6f4">
+  <meta name="description" content="Guía visual de TRAZA: aprende a registrar facturas, asignaciones, intentos, confirmaciones y saldos paso a paso.">
+  <title>Guía de uso de TRAZA · DEMO</title>
+  <link rel="stylesheet" href="manual.css">
+</head>
+<body id="top">
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></symbol>
+    <symbol id="i-sheet" viewBox="0 0 24 24"><path d="M5 3.5h9l5 5v12H5z"/><path d="M14 3.5v5h5M8 12h8M8 15.5h8M8 19h5"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="m9.5 14.5 5-5M8 16l-1.5 1.5a4 4 0 0 1-5.7-5.7l4-4a4 4 0 0 1 5.7 0M16 8l1.5-1.5a4 4 0 0 1 5.7 5.7l-4 4a4 4 0 0 1-5.7 0"/></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="m21 3-7.5 18-3.7-7.8L2 9.5zM9.8 13.2 21 3"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m7.5 12.2 3 3 6-6.2"/></symbol>
+    <symbol id="i-return" viewBox="0 0 24 24"><path d="M9 7H4V2M4.5 7A8.5 8.5 0 1 1 3 14"/><path d="m4 7 5 5"/></symbol>
+    <symbol id="i-ledger" viewBox="0 0 24 24"><path d="M4 4h16v16H4zM8 8h8M8 12h8M8 16h4"/><path d="M7 4v16"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5h.01"/></symbol>
+  </svg>
+
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Volver a TRAZA">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 21.5 16 29l16-18M8 12h9"/></svg></span>
+      <span><b>TRAZA</b><small>Guía de uso</small></span>
+    </a>
+    <span class="demo-tag">ENTORNO DEMO</span>
+    <a class="top-link" href="index.html" target="_blank" rel="noopener">Abrir TRAZA <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  </header>
+
+  <main>
+    <section class="hero page-width" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> Guía visual para empezar</p>
+        <h1 id="hero-title">Tu primer recorrido en TRAZA</h1>
+        <p class="hero-lede">Si ya usas Excel, ya conoces lo esencial: facturas, importes, fechas y estados. TRAZA conecta esos datos para que puedas seguir cada pago paso a paso.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#pasos">Empezar con los 8 pasos <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="text-link" href="#vocabulario">Ver palabras clave</a>
+        </div>
+        <div class="hero-note"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Esta guía acompaña la DEMO. No necesitas saber contabilidad para practicar.</span></div>
+      </div>
+      <figure class="hero-illustration">
+        <svg viewBox="0 0 600 390" role="img" aria-labelledby="hero-fig-title hero-fig-desc">
+          <title id="hero-fig-title">Una fila de Excel conectada con la historia de una factura</title>
+          <desc id="hero-fig-desc">A la izquierda hay una tabla con el número y el importe de una factura. A la derecha, los pasos de asignación, intento y confirmación aparecen unidos.</desc>
+          <rect x="16" y="18" width="568" height="354" rx="24" fill="#f5f8f6"/>
+          <rect x="45" y="64" width="233" height="248" rx="15" fill="#fff" stroke="#dfe8e2" stroke-width="2"/>
+          <rect x="45" y="64" width="233" height="50" rx="15" fill="#e8f2ec"/>
+          <path d="M45 99h233" stroke="#d8e5dd" stroke-width="2"/>
+          <text x="68" y="94" fill="#365d48" font-size="15" font-family="Arial,sans-serif" font-weight="700">Tu fila en Excel</text>
+          <text x="68" y="141" fill="#89968e" font-size="12" font-family="Arial,sans-serif">FACTURA</text><text x="68" y="164" fill="#28372f" font-size="17" font-family="Arial,sans-serif" font-weight="700">FC-DEMO-01</text>
+          <path d="M68 180h185" stroke="#edf1ee" stroke-width="2"/>
+          <text x="68" y="208" fill="#89968e" font-size="12" font-family="Arial,sans-serif">IMPORTE</text><text x="68" y="232" fill="#28372f" font-size="20" font-family="Arial,sans-serif" font-weight="700">S/ 100.00</text>
+          <rect x="68" y="254" width="122" height="30" rx="8" fill="#fff4df"/><circle cx="83" cy="269" r="5" fill="#ae7b31"/><text x="96" y="274" fill="#815c21" font-size="12" font-family="Arial,sans-serif" font-weight="700">Pendiente</text>
+          <path d="M296 188h54" stroke="#75a189" stroke-width="4" stroke-linecap="round"/><path d="m341 178 11 10-11 10" fill="none" stroke="#75a189" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="369" y="56" width="177" height="68" rx="13" fill="#fff" stroke="#dfe8e2" stroke-width="2"/><circle cx="395" cy="90" r="15" fill="#e8f2ec"/><text x="390" y="96" fill="#2c6c4c" font-size="15" font-family="Arial,sans-serif" font-weight="700">1</text><text x="421" y="86" fill="#2f4036" font-size="15" font-family="Arial,sans-serif" font-weight="700">Asignación</text><text x="421" y="105" fill="#7c8a81" font-size="12" font-family="Arial,sans-serif">¿Quién lo tramita?</text>
+          <path d="M458 126v22" stroke="#9bb8a5" stroke-width="3" stroke-dasharray="4 5"/>
+          <rect x="369" y="151" width="177" height="68" rx="13" fill="#fff" stroke="#dfe8e2" stroke-width="2"/><circle cx="395" cy="185" r="15" fill="#e8f2ec"/><text x="390" y="191" fill="#2c6c4c" font-size="15" font-family="Arial,sans-serif" font-weight="700">2</text><text x="421" y="181" fill="#2f4036" font-size="15" font-family="Arial,sans-serif" font-weight="700">Intento</text><text x="421" y="200" fill="#7c8a81" font-size="12" font-family="Arial,sans-serif">¿Qué se hizo?</text>
+          <path d="M458 221v22" stroke="#9bb8a5" stroke-width="3" stroke-dasharray="4 5"/>
+          <rect x="369" y="246" width="177" height="68" rx="13" fill="#fff" stroke="#dfe8e2" stroke-width="2"/><circle cx="395" cy="280" r="15" fill="#e8f2ec"/><text x="390" y="286" fill="#2c6c4c" font-size="15" font-family="Arial,sans-serif" font-weight="700">3</text><text x="421" y="276" fill="#2f4036" font-size="15" font-family="Arial,sans-serif" font-weight="700">Confirmación</text><text x="421" y="295" fill="#7c8a81" font-size="12" font-family="Arial,sans-serif">¿Qué recibió el proveedor?</text>
+        </svg>
+        <figcaption>Una factura es el punto de partida. Los pasos relacionados quedan juntos.</figcaption>
+      </figure>
+    </section>
+
+    <nav class="guide-nav page-width" aria-label="En esta guía">
+      <span>En esta guía</span>
+      <a href="#excel">De Excel a TRAZA</a><a href="#pasos">Los 8 pasos</a><a href="#reglas">Reglas simples</a><a href="#practica">Practicar</a>
+    </nav>
+
+    <section class="section page-width" id="excel" aria-labelledby="excel-title">
+      <div class="section-heading">
+        <p class="eyebrow">La idea principal</p>
+        <h2 id="excel-title">Piensa en TRAZA como tu hoja, con una historia por factura</h2>
+        <p>En Excel, una fila puede guardar muchos datos. En TRAZA, cada factura conserva sus datos y se conecta con los movimientos que ocurren después.</p>
+      </div>
+      <div class="excel-bridge">
+        <div class="sheet-illustration" aria-label="Ejemplo de una fila de Excel">
+          <div class="sheet-title"><svg aria-hidden="true"><use href="#i-sheet"/></svg><b>Tu fila de Excel</b><span>ejemplo</span></div>
+          <div class="sheet-row sheet-head"><span>Factura</span><span>Importe</span><span>Estado</span></div>
+          <div class="sheet-row"><b>FC-DEMO-01</b><b>S/ 100</b><span class="status status-wait">Pendiente</span></div>
+          <div class="sheet-foot">Los datos de arriba quedan en el registro de factura.</div>
+        </div>
+        <div class="bridge-arrow" aria-hidden="true"><svg><use href="#i-arrow"/></svg><span>se conecta con</span></div>
+        <div class="history-illustration">
+          <div class="history-head"><svg aria-hidden="true"><use href="#i-link"/></svg><b>La historia de esa factura</b></div>
+          <ol class="history-line">
+            <li><span class="node">1</span><span><b>Asignación</b><small>A quién y cuánto</small></span></li>
+            <li><span class="node">2</span><span><b>Intento</b><small>Cada gestión queda separada</small></span></li>
+            <li><span class="node">3</span><span><b>Confirmación</b><small>Lo recibido por el proveedor</small></span></li>
+          </ol>
+        </div>
+      </div>
+      <div class="vocabulary" id="vocabulario">
+        <div class="vocabulary-title"><span class="icon-disc"><svg aria-hidden="true"><use href="#i-ledger"/></svg></span><div><h3>Palabras que verás</h3><p>Son parecidas a las columnas que ya conoces.</p></div></div>
+        <dl class="vocab-list">
+          <div><dt>Factura u obligación</dt><dd>Lo que la empresa debe al proveedor.</dd></div>
+          <div><dt>Asignación</dt><dd>La parte que se encarga a un intermediario.</dd></div>
+          <div><dt>Intento</dt><dd>Una gestión concreta para enviar el dinero.</dd></div>
+          <div><dt>Evidencia</dt><dd>Un archivo o dato que muestra lo que se intentó.</dd></div>
+          <div><dt>Confirmación del proveedor</dt><dd>Lo que el proveedor confirma que recibió y aplicó.</dd></div>
+          <div><dt>Estado de cuenta</dt><dd>Los importes registrados a favor o por regularizar con el intermediario.</dd></div>
+        </dl>
+      </div>
+      <div class="invoice-finder">
+        <div><p class="eyebrow">¿Buscas una factura?</p><h3>Puedes abrirla desde tres lugares</h3><p>Los tres caminos llegan al mismo detalle. Elige el que te resulte más cómodo.</p></div>
+        <ol>
+          <li><a href="index.html#inicio" target="_blank" rel="noopener"><span class="finder-number">1</span><span><b>Resumen</b><small>Haz clic en el número de la factura de la actividad o de próximos vencimientos.</small></span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="index.html#obligaciones" target="_blank" rel="noopener"><span class="finder-number">2</span><span><b>Facturas por pagar</b><small>Busca por factura, proveedor o ID; luego haz clic en la factura.</small></span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+          <li><a href="index.html#asignaciones" target="_blank" rel="noopener"><span class="finder-number">3</span><span><b>Solicitudes a intermediarios</b><small>Haz clic en el número de factura de la columna “Factura / saldo”.</small></span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="pasos" aria-labelledby="steps-title">
+      <div class="page-width">
+        <div class="section-heading">
+          <p class="eyebrow">Hazlo en orden</p>
+          <h2 id="steps-title">Los 8 pasos de un pago</h2>
+          <p>Sigue el camino de arriba hacia abajo. Si un paso todavía no ocurrió, déjalo pendiente; no lo marques como terminado.</p>
+        </div>
+        <ol class="step-list">
+          <li class="step-card">
+            <span class="step-number">01</span><span class="step-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span>
+            <div class="step-content"><p class="where">DÓNDE: FACTURAS POR PAGAR</p><h3>Registra la factura</h3><p>Elige <b>Nueva obligación</b>. Anota el número de factura, proveedor, importe, moneda y vencimiento. Revisa los datos antes de guardar.</p><p class="finish"><b>Vas bien si:</b> ves la factura en la lista y el importe pendiente coincide con el documento.</p></div>
+          </li>
+          <li class="step-card">
+            <span class="step-number">02</span><span class="step-icon"><svg aria-hidden="true"><use href="#i-link"/></svg></span>
+            <div class="step-content"><p class="where">DÓNDE: DETALLE DE FACTURA / ASIGNACIONES</p><h3>Decide quién tramita el pago</h3><p>Abre la factura y crea una asignación. Indica el intermediario y el importe que le corresponde. Si solo asignas una parte, el resto sigue pendiente.</p><p class="finish"><b>Antes de enviar:</b> compara la moneda de la factura con la cuenta del proveedor. Si son distintas, registra el importe que debe llegar y cómo se hará la conversión.</p></div>
+          </li>
+          <li class="step-card">
+            <span class="step-number">03</span><span class="step-icon"><svg aria-hidden="true"><use href="#i-send"/></svg></span>
+            <div class="step-content"><p class="where">DÓNDE: PORTAL DE INTERMEDIARIO</p><h3>Registra cada intento</h3><p>En la lista <b>Vista</b>, selecciona el intermediario de DEMO y abre su portal. Revisa la solicitud. Cuando haya un intento, registra su importe, fecha y referencia; adjunta la evidencia si existe.</p><p class="finish"><b>Recuerda:</b> un segundo envío es otro intento. No sumes dos gestiones en una sola fila.</p></div>
+          </li>
+          <li class="step-card">
+            <span class="step-number">04</span><span class="step-icon"><svg aria-hidden="true"><use href="#i-eye"/></svg></span>
+            <div class="step-content"><p class="where">DÓNDE: REVISIÓN DE EVIDENCIA</p><h3>Mira el comprobante</h3><p>Comprueba que el archivo se lea y que corresponda a la factura, al intento y al importe. Puedes aprobarlo como evidencia u observarlo si falta información.</p><p class="finish"><b>Ojo:</b> aprobar un comprobante solo revisa el archivo. No significa que el proveedor recibió el dinero.</p></div>
+          </li>
+          <li class="step-card">
+            <span class="step-number">05</span><span class="step-icon"><svg aria-hidden="true"><use href="#i-check"/></svg></span>
+            <div class="step-content"><p class="where">DÓNDE: CONFIRMACIÓN DEL PROVEEDOR</p><h3>Confirma lo que llegó</h3><p>Primero verifica la recepción con el proveedor por el canal correspondiente. Después registra la fecha, el importe que confirma, la moneda, la factura a la que lo aplicó y quién confirmó.</p><p class="finish"><b>Vas bien si:</b> confirmas solo el monto que el proveedor dijo haber recibido; el resto sigue pendiente.</p></div>
+          </li>
+          <li class="step-card">
+            <span class="step-number">06</span><span class="step-icon"><svg aria-hidden="true"><use href="#i-ledger"/></svg></span>
+            <div class="step-content"><p class="where">DÓNDE: DETALLE DE FACTURA / ESTADO DE CUENTA</p><h3>Registra lo abonado al intermediario</h3><p>Después de la confirmación del proveedor, revisa qué parte del intento corresponde a fondos propios y qué parte ya salió como anticipo. Si corresponde pagar al intermediario, usa <b>Registrar liquidación</b> o <b>Registrar movimiento</b> y elige el intento exacto.</p><p class="finish"><b>No pagues dos veces:</b> aplica el anticipo que ya entregaste y marca el reembolso como enviado solo después de pagarlo. Un movimiento previo debe estar identificado como anticipo o excepción.</p></div>
+          </li>
+          <li class="step-card">
+            <span class="step-number">07</span><span class="step-icon"><svg aria-hidden="true"><use href="#i-return"/></svg></span>
+            <div class="step-content"><p class="where">DÓNDE: DEVOLUCIONES</p><h3>Registra el dinero que regresó</h3><p>Elige el intento exacto, el importe, la moneda y quién recibió la devolución. Si la devolución deshace una recepción ya confirmada, vincula también esa confirmación y marca que reduce lo recibido.</p><p class="finish"><b>No borres el paso anterior:</b> una devolución es un movimiento nuevo, con su propio destino y motivo.</p></div>
+          </li>
+          <li class="step-card">
+            <span class="step-number">08</span><span class="step-icon"><svg aria-hidden="true"><use href="#i-ledger"/></svg></span>
+            <div class="step-content"><p class="where">DÓNDE: ESTADO DE CUENTA INTERMEDIARIOS</p><h3>Comprueba qué queda por pagar o regularizar</h3><p>Busca al intermediario y revisa cada moneda por separado. Mira el anticipo entregado, lo aplicado, lo comprometido en intentos pendientes y lo que falta regularizar o devolver. Si aparece un monto por recuperar o compensar, no lo ocultes ni lo cambies a cero.</p><p class="finish"><b>Última revisión:</b> cada anticipo, reembolso y devolución debe apuntar a la factura y al intento que le corresponden.</p></div>
+          </li>
+        </ol>
+        <div class="path-note"><svg aria-hidden="true"><use href="#i-info"/></svg><p><b>Una idea para recordar:</b> la factura dice cuánto se debe; la confirmación dice cuánto recibió el proveedor; el estado de cuenta dice qué queda con el intermediario.</p></div>
+      </div>
+    </section>
+
+    <section class="section page-width" id="reglas" aria-labelledby="rules-title">
+      <div class="section-heading">
+        <p class="eyebrow">Tres reglas fáciles</p>
+        <h2 id="rules-title">Antes de guardar, mira estas señales</h2>
+        <p>Unos segundos de revisión ayudan a no confundir documentos, pagos y saldos.</p>
+      </div>
+      <div class="rule-grid">
+        <article class="rule-visual">
+          <div class="rule-compare">
+            <div class="compare-item evidence"><span class="compare-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><b>Comprobante</b><small>Prueba de un intento</small></div>
+            <span class="not-equal" aria-label="no es lo mismo">≠</span>
+            <div class="compare-item confirmed"><span class="compare-icon"><svg aria-hidden="true"><use href="#i-check"/></svg></span><b>Confirmación</b><small>Recepción del proveedor</small></div>
+          </div>
+          <h3>Un archivo no confirma el pago</h3><p>El proveedor debe confirmar el importe recibido. Mantén esos dos registros separados.</p>
+        </article>
+        <article class="rule-visual">
+          <div class="rule-compare currency-compare"><span class="currency-chip">PEN<br><b>Factura</b></span><svg aria-hidden="true"><use href="#i-arrow"/></svg><span class="currency-chip currency-other">USD<br><b>Cuenta bancaria</b></span></div>
+          <h3>La moneda puede ser diferente</h3><p>Indica cuánto debe llegar a la cuenta y registra el tipo de cambio, su fecha y fuente cuando haya conversión. No copies el importe como si fuera igual.</p>
+        </article>
+        <article class="rule-visual">
+          <div class="balance-picture"><div><small>ENTREGADO</small><b>Anticipo</b></div><span>+</span><div><small>CONFIRMADO</small><b>Aplicado</b></div><span>−</span><div><small>POR REVISAR</small><b>Regularizar</b></div></div>
+          <h3>Un anticipo tiene su propio recorrido</h3><p>Vincúlalo a una factura y un intento. No uses el mismo importe para cubrir dos intentos pendientes.</p>
+        </article>
+      </div>
+      <div class="keep-in-mind"><span class="icon-disc"><svg aria-hidden="true"><use href="#i-info"/></svg></span><p>Las cantidades en monedas distintas se revisan por separado. TRAZA no inventa una conversión ni consulta un banco.</p></div>
+    </section>
+
+    <section class="section practice-section" id="practica" aria-labelledby="practice-title">
+      <div class="page-width practice-layout">
+        <div class="practice-copy"><p class="eyebrow">Un lugar para practicar</p><h2 id="practice-title">Empieza con ejemplos antes de registrar algo</h2><p>Abre los <b>28 escenarios</b> desde <b>Herramientas del laboratorio</b>. Allí puedes consultar casos ficticios y ver qué debería pasar en cada uno.</p><a class="button button-primary" href="index.html#laboratorio" target="_blank" rel="noopener">Ver los 28 escenarios <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        <div class="practice-cases">
+          <article><span class="case-tag">OBL-015</span><div><b>Sin anticipo</b><p>La transferencia regresa antes de que el proveedor confirme. La confirmación del proveedor queda en S/ 0.</p></div></article>
+          <article><span class="case-tag case-tag-warm">OBL-016</span><div><b>Con anticipo</b><p>El anticipo existe aunque el proveedor no confirme. Debe aparecer pendiente de regularización.</p></div></article>
+          <p class="practice-footnote">Son datos de ejemplo. No uses la DEMO para pagos ni información real.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section page-width" aria-labelledby="excel-tools-title">
+      <div class="section-heading">
+        <p class="eyebrow">Para quien viene de Excel</p>
+        <h2 id="excel-tools-title">Atajos que ya conoces</h2>
+      </div>
+      <div class="shortcut-list">
+        <div><span class="shortcut-icon"><svg aria-hidden="true"><use href="#i-sheet"/></svg></span><p><b>Buscar</b><small>Usa la lupa o el buscador de Facturas para encontrar una factura, proveedor o ID.</small></p></div>
+        <div><span class="shortcut-icon"><svg aria-hidden="true"><use href="#i-ledger"/></svg></span><p><b>Filtrar y revisar estados</b><small>Usa moneda y estado para acotar la lista. Revisa el registro completo antes de decidir.</small></p></div>
+        <div><span class="shortcut-icon"><svg aria-hidden="true"><use href="#i-arrow"/></svg></span><p><b>Exportar a CSV</b><small>La exportación sirve para analizar en Excel. Editar el archivo CSV no cambia TRAZA; esta DEMO no importa cambios desde Excel.</small></p></div>
+      </div>
+      <aside class="demo-warning"><svg aria-hidden="true"><use href="#i-info"/></svg><div><b>TRAZA es una DEMO local</b><p>Los cambios se guardan en el navegador y equipo donde abriste la aplicación. No se sincronizan con tus compañeros. Los roles son vistas simuladas. Usa solo datos ficticios y no compartas información financiera o personal.</p></div></aside>
+      <aside class="save-help"><div class="save-help-icon"><svg aria-hidden="true"><use href="#i-info"/></svg></div><div><b>¿No se pudo guardar?</b><p>No cierres ni recargues el formulario. Descarga una exportación de datos, reduce los archivos adjuntos o libera espacio en el navegador; luego vuelve a intentar guardar.</p></div></aside>
+    </section>
+  </main>
+
+  <footer class="footer page-width"><a class="brand footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M8 21.5 16 29l16-18M8 12h9"/></svg></span><span><b>TRAZA</b><small>Datos DEMO · sin conexión financiera</small></span></a><a class="footer-top" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Volver al inicio ↑</a></footer>
+</body>
+</html>
